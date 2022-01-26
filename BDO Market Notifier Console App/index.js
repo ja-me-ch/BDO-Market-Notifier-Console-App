@@ -9,16 +9,32 @@ aws.config.update({
 });
 
 const axios = require('axios');
-const config = {
-    method: 'post',
-    url: 'https://api.arsha.io/v2/na/GetWorldMarketWaitList',
-    headers: {}
-};
 
-const blackstarMainhandIds = [715001, 715003, 715005, 715007, 715009, 715011, 715013, 715016, 715017, 715019, 715021, 718616, 690563, 692045, 730564, 732313, 733063, 12257]
+
+const blackstarMainhandIds = [715001, 715003, 715005, 715007, 715009, 715011, 715013, 715016, 715017, 715019, 715021, 718616, 690563, 692045, 730564, 732313, 733063]
 let liveAtTimes = [];
 
+
 console.log('BDO Market Notifier Console App');
+
+const displayLastRefreshTime = function () {
+    let lastRefreshTime = new Date();
+    lastRefreshTime.getTime();
+
+    let meridiem = 'AM';
+    let displayedHours = lastRefreshTime.getHours();
+    let displayedMinutes = lastRefreshTime.getMinutes();
+    if (displayedHours > 12) {
+        displayedHours -= 12;
+        meridiem = 'PM';
+    }
+    if (displayedMinutes < 10) {
+        displayedMinutes = `0${displayedMinutes}`
+    }
+
+    console.log(`Last Refreshed: ${displayedHours}:${displayedMinutes} ${meridiem}`);
+}
+
 
 const sendSMS = (publishParams) => {
     const sns = new aws.SNS({ apiVersion: '2010-03-31' }).publish(publishParams).promise()
@@ -33,35 +49,80 @@ const sendSMS = (publishParams) => {
 const checkArrayForItem = function (items) {
     for (let i = 0; i < items.length; i++) {
         if (blackstarMainhandIds.includes(items[i].id)) {
+
             if (liveAtTimes.includes(items[i].liveAt)) {
-                console.log(`Notifications for ${items[i].name} has already been sent`);
+                console.log(`Notifications for this ${items[i].id} has already been sent`);
             }
             else {
                 liveAtTimes.push(items[i].liveAt);
 
                 let publishParams = {
-                    Message: `${items[i].name} FOUND!`,
+                    Message: `${items[i].id} FOUND!`,
                     PhoneNumber: process.env.RECEIVING_PHONE_NUMBER
                 };
 
-                sendSMS(publishParams);
+                //sendSMS(publishParams);
 
-                console.log(`${items[i].name} FOUND!`);
-                //Insert Callback to send text message to my phone
+                console.log(`${items[i].id} FOUND!`);
             }
         }
     }
 }
+
+const delimitResultMsg = function (resultMsg) {
+    let delimitedItems = []
+    let pipeDelimited = resultMsg.split('|')
+    for (let i = 0; i < pipeDelimited.length; i++) {
+        let dashDelimited = pipeDelimited[i].split('-');
+        if (dashDelimited[0] !== '') {
+            delimitedItems.push({
+                id: parseInt(dashDelimited[0]),
+                subId: parseInt(dashDelimited[1]),
+                price: parseInt(dashDelimited[2]),
+                liveAt: parseInt(dashDelimited[3])
+            })
+        };
+    }
+    return delimitedItems;
+}
+
 setInterval(async () => {
+    console.clear();
+    const bdoAPI = 'https://na-trade.naeu.playblackdesert.com/Trademarket/GetWorldMarketWaitList'
+    const arshaAPI = 'https://api.arsha.io/v2/na/GetWorldMarketWaitList'
+
+    const apiUsage = bdoAPI;
+
+    const config = {
+        method: 'post',
+        url: apiUsage,
+        headers: {}
+    };
+
+
     let items = await axios(config)
         .then(function (response) {
-            return response.data; //returns list of items in market waitlist
+            if (apiUsage === bdoAPI) return response.data.resultMsg; //returns list of items in market waitlist
+            else return response.data;
         })
         .catch(function (error) {
             return error;
         });
 
+    if (apiUsage === bdoAPI) {
+        items = delimitResultMsg(items);
+    }
+
+
     if (items.length >= 1) {
         checkArrayForItem(items);
     }
-}, 5000)
+
+    displayLastRefreshTime();
+    console.log(items);
+
+}, 60000)
+
+
+
+
