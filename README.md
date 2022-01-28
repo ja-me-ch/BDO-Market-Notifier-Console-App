@@ -15,8 +15,8 @@ A Node.js console application that consumes the Black Desert Online Market Place
 
 
 ## Getting Started
-Download the BDO-Market-Notifier-Console-App and install Node.js.
-To install Node.js, you can download the LTS version here: https://nodejs.org/en/
+- Download the BDO-Market-Notifier-Console-App and install Node.js.
+- To install Node.js, you can download the LTS version here: https://nodejs.org/en/
 
 ## Modifications
 ### Desired Items
@@ -36,7 +36,7 @@ AWS_REGION=
 RECEIVING_PHONE_NUMBER=
 ```
 - Then follow this guide on how to set up an AWS account with Amazon SNS: https://medium.com/@pkthakur01/sending-text-sms-using-aws-sns-in-node-js-d83d0764120e
-You only need to follow the AWS parts, anything with Node.js you can ignore.
+Once you have filled in your acess key, secret key, and region you can ignore the rest.
 - After you are done following that guide you may need to add your phone number, the one you wanna send texts to, to the sandbox, on the same page as your Amazon SNS, Text messaging page there should be an option for that.
 - The only part not in that guide is the RECEIVING_PHONE_NUMBER, for that you must put the phone number you wish to receive it on along with the country code and +. eg. for USA and Canada its +1 and if your phone number was 123-555-4567 it should look like this: RECEIVING_PHONE_NUMBER=+11235554567
 
