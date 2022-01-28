@@ -14,18 +14,19 @@ A Node.js console application that consumes the Black Desert Online Market Place
   - [Blackstar Mainhands](#blackstar-mainhands)
 
 
-## [Getting Started](#getting-started)
+## Getting Started
+Download the BDO-Market-Notifier-Console-App and install Node.js.
+To install Node.js, you can download the LTS version here: https://nodejs.org/en/
 
-
-## [Modifications](#modifications)
-### [Desired Items](#desired-items)
+## Modifications
+### Desired Items
 To modifying which items you desire to be notified for, you must add them into the desiredItems array.
 - First, you MUST specify the id of the item. Ids for items can be found on various sites like BDOCodex. [For example, The Id for Blackstar Longbow is 715003](https://bdocodex.com/us/item/715003/)
 - Second, you can include a name, typically you'll want it to be the actual name of the item but it doesn't actually matter, its mainly for you to make sense of it. Also the text message will include the name of the item found.
 - Third, the subId is the enhancement level of the item. So on accessories, TET is 4 and PEN is 5. For weapons and armours, PEN is 20. If subId is not included, it will notify you for all versions of the item that is in the market waitlist.
 - Lastly, make sure to follow the formatting, the last item shouldn't need the , after the closing curly brace! There is also a premade list of all the current Blackstar Mainhands further down the page.
 
-### [dotenv](#dotenv)
+### dotenv
 You don't need to know what a dotenv (.env) file is but all you need to know is that you store your sensitive information here. I didn't include mine in here (that's the whole point) so you have to create your own and fill it out yourself. Don't worry it is very easy!
 - First open notepad and copy and paste the text below and do save as all files and make it .env and put it inside the same folder as the app.js file!
 ```
@@ -44,7 +45,7 @@ You only need to follow the AWS parts, anything with Node.js you can ignore.
 
 
 ## Premade Lists
-### [Blackstar Mainhands](#blackstar-mainhands)
+### Blackstar Mainhands
 ```
 const desiredItems = [
     {
