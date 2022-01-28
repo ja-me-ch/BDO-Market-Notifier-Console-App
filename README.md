@@ -6,12 +6,15 @@ A Node.js console application that consumes the Black Desert Online Market Place
 
 
 ## Table of Contents
+- ### [Getting Started](#getting-started)
 - ### [Modifications](#modifications)
 - #### --[Desired Items](#desired-items)
 - #### --[dotenv](#dotenv)
 - ### [Premade Lists](#premade-lists) 
 - #### --[Blackstar Mainhands](#blackstar-mainhands)
 
+
+## [Getting Started](#getting-started)
 
 
 ## [Modifications](#modifications)
@@ -31,9 +34,16 @@ AWS_SECRET_ACCESS_KEY=
 AWS_REGION=
 RECEIVING_PHONE_NUMBER=
 ```
-https://medium.com/@pkthakur01/sending-text-sms-using-aws-sns-in-node-js-d83d0764120e
+- Then follow this guide on how to set up an AWS account with Amazon SNS: https://medium.com/@pkthakur01/sending-text-sms-using-aws-sns-in-node-js-d83d0764120e
+You only need to follow the AWS parts, anything with Node.js you can ignore.
+- After you are done following that guide you may need to add your phone number, the one you wanna send texts to, to the sandbox, on the same page as your Amazon SNS, Text messaging page there should be an option for that.
+- The only part not in that guide is the RECEIVING_PHONE_NUMBER, for that you must put the phone number you wish to receive it on along with the country code and +. eg. for USA and Canada its +1 and if your phone number was 123-555-4567 it should look like this: RECEIVING_PHONE_NUMBER=+11235554567
 
-## [Premade Lists](#premade-lists)
+
+
+
+
+## Premade Lists
 ### [Blackstar Mainhands](#blackstar-mainhands)
 ```
 const desiredItems = [
