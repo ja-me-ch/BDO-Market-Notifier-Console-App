@@ -6,12 +6,12 @@ A Node.js console application that consumes the Black Desert Online Market Place
 
 
 ## Table of Contents
-- ### [Getting Started](#getting-started)
-- ### [Modifications](#modifications)
-- #### --[Desired Items](#desired-items)
-- #### --[dotenv](#dotenv)
-- ### [Premade Lists](#premade-lists) 
-- #### --[Blackstar Mainhands](#blackstar-mainhands)
+- [Getting Started](#getting-started)
+- [Modifications](#modifications)
+  - [Desired Items](#desired-items)
+  - [dotenv](#dotenv)
+- [Premade Lists](#premade-lists) 
+  - [Blackstar Mainhands](#blackstar-mainhands)
 
 
 ## [Getting Started](#getting-started)
