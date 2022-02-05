@@ -27,7 +27,7 @@ To modifying which items you desire to be notified for, you must add them into t
 - Lastly, make sure to follow the formatting, the last item shouldn't need the , after the closing curly brace! There is also a premade list of all the current Blackstar Mainhands further down the page.
 
 ### dotenv
-You don't need to know what a dotenv (.env) file is but all you need to know is that you store your sensitive information here. I didn't include mine in here (that's the whole point) so you have to create your own and fill it out yourself. Don't worry it is very easy!
+You don't need to know what a dotenv (.env) file is but all you need to know is that you store your sensitive information here. I didn't include mine in here so you have to create your own and fill it out yourself. Don't worry it is very easy!
 - First open notepad and copy and paste the text below and do save as all files and make it .env and put it inside the same folder as the app.js file!
 ```
 AWS_ACCESS_KEY_ID=
@@ -39,6 +39,18 @@ RECEIVING_PHONE_NUMBER=
 Once you have filled in your acess key, secret key, and region you can ignore the rest.
 - After you are done following that guide you may need to add your phone number, the one you wanna send texts to, to the sandbox, on the same page as your Amazon SNS, Text messaging page there should be an option for that.
 - The only part not in that guide is the RECEIVING_PHONE_NUMBER, for that you must put the phone number you wish to receive it on along with the country code and +. eg. for USA and Canada its +1 and if your phone number was 123-555-4567 it should look like this: RECEIVING_PHONE_NUMBER=+11235554567
+
+## Setting it Up
+Now that the pieces are in place you can now run the app, it will periodically (default is every 1 minute) check the marketplace waitlist (registration queue). If you choose to run it on your PC, the app will check as long as you have the window open. If you wish to still receive texts while your PC is off consider hosting it somewhere like Amazon EC2.
+### Running the App on your PC (Windows)
+- Go to Start, and run Windows PowerShell (not PowerShell ISE!)
+- Some command line 101 stuff: you can type ls to list the current directory if you're lost. 
+- Now navigate to the BDO-Market-Notifier-Console-App folder, since the folder has spaces in it you can press tab to auto complete the folder name or do cd '.\BDO Market Notifier Console App\'
+- You will know you're in the right folder if you type ls and you are able to see the index.js and .env file
+- Type the following: ```npm install```, if anything requires confirmation just press enter. This command downloads the necessary files needed to run the app.
+- Type the following: ```node app.js```
+
+### Hosting the App on Amazon EC2
 
 
 
