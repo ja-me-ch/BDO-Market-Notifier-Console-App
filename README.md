@@ -1,11 +1,14 @@
-# WIP
+
 # BDO-Market-Notifier-Console-App
 A Node.js console application that consumes the Black Desert Online Market Place Waitlist API. It utilizes Amazon SNS to send a text message if a desired item has been found in the waitlist. This app does require you to set up your own AWS account.
 
+I am not responsible of any damages or costs incurred when attempting this.
 
-
+## FAQ
+- How much does this cost? From when I was sending out test text messages and hosting this on EC2 for about a week, it costed a grand total  of 0.12 USD.
 
 ## Table of Contents
+- [FAQ](#faq)
 - [Getting Started](#getting-started)
 - [Modifications](#modifications)
   - [Desired Items](#desired-items)
