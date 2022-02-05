@@ -5,6 +5,7 @@ A Node.js console application that consumes the Black Desert Online Market Place
 I am not responsible of any damages or costs incurred when attempting this.
 
 ## FAQ
+- How do I download it? At the top, Code -> Download ZIP
 - How much does this cost? From when I was sending out test text messages and hosting this on EC2 for about a week, it costed a grand total  of 0.12 USD.
 
 ## Table of Contents
