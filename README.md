@@ -54,10 +54,15 @@ Now that the pieces are in place you can now run the app, it will periodically (
 - Type the following: ```node app.js```
 
 ### Hosting the App on Amazon EC2
-
-
-
-
+- Select Amazon EC2 in AWS and launch and instance
+- Tick the free tier only and select Microsoft Windows Server 2019 Base
+- Select the free tier eligible, t2.micro
+- Create a key pair and download it
+- Afterwards return to the EC2 screen, select your instance and Connect
+- You can follow this comment to transfer files to this EC2 instance: https://serverfault.com/a/343006
+- When you transfer files make sure to transfer the files that are present in the initial download, EXCLUDE THE NODE_MODULES FOLDER
+- After the files are fully transfered onto the EC2 instance you can follow the instructions from: [Running the App on Your PC](#running-the-app-on-your-pc)
+- This instance stays on even if you disconnect from it and now you can turn off your computer too!
 
 ## Premade Lists
 ### Blackstar Mainhands
