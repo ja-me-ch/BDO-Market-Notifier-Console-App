@@ -10,6 +10,9 @@ A Node.js console application that consumes the Black Desert Online Market Place
 - [Modifications](#modifications)
   - [Desired Items](#desired-items)
   - [dotenv](#dotenv)
+- [Setting it Up](#setting-it-up)
+  - [Running the App on Your PC](#running-the-app-on-your-pc)
+  - [Hosting the App on Amazon EC2](#hosting-the-app-on-amazon-ec2)
 - [Premade Lists](#premade-lists) 
   - [Blackstar Mainhands](#blackstar-mainhands)
 
@@ -42,7 +45,7 @@ Once you have filled in your acess key, secret key, and region you can ignore th
 
 ## Setting it Up
 Now that the pieces are in place you can now run the app, it will periodically (default is every 1 minute) check the marketplace waitlist (registration queue). If you choose to run it on your PC, the app will check as long as you have the window open. If you wish to still receive texts while your PC is off consider hosting it somewhere like Amazon EC2.
-### Running the App on your PC (Windows)
+### Running the App on your PC
 - Go to Start, and run Windows PowerShell (not PowerShell ISE!)
 - Some command line 101 stuff: you can type ls to list the current directory if you're lost. 
 - Now navigate to the BDO-Market-Notifier-Console-App folder, since the folder has spaces in it you can press tab to auto complete the folder name or do cd '.\BDO Market Notifier Console App\'
