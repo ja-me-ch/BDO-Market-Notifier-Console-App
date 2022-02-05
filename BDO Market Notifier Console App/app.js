@@ -24,6 +24,11 @@ const desiredItems = [
     {
         id: 11103,
         name: 'Uwugons'
+    },
+    {
+        id: 11101,
+        name: 'PEN Griffons',
+        subId: 20
     }
 ]
 
@@ -92,13 +97,13 @@ const checkArrayForItem = function (items) {
                     if (e.subId !== undefined) {
                         if (e.subId === items[i].subId) {
                             console.log(`Message: ${publishParams.Message} has been sent to: ${publishParams.PhoneNumber}`);
-                            //sendSMS(publishParams);
+                            sendSMS(publishParams);
                         }
 
                     }
                     else {
                         console.log(`Message: ${publishParams.Message} has been sent to: ${publishParams.PhoneNumber}`);
-                        //sendSMS(publishParams);
+                        sendSMS(publishParams);
                     }
 
                 }
