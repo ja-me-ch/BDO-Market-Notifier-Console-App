@@ -6,7 +6,8 @@ I am not responsible of any damages or costs incurred when attempting this.
 
 ## FAQ
 - How do I download it? At the top, Code -> Download ZIP
-- How much does this cost? From when I was sending out test text messages and hosting this on EC2 for about a week, it costed a grand total  of 0.12 USD.
+- How much does this cost? From when I was sending out test text messages and hosting this on EC2 for about a week, it costed a grand total  of 0.12 USD. You are only charged for sending text messages from what I know
+- How do I stop the app? Just close the console/powershell window. To stop the program without closing the window you can do Ctrl+C
 
 ## Table of Contents
 - [FAQ](#faq)
