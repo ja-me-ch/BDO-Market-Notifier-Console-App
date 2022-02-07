@@ -114,6 +114,21 @@ const checkArrayForItem = function (items) {
 }
 
 const getWorldMarketWaitList = async function () {
+    /*
+        BDO EU API: https://eu-trade.naeu.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+        BDO NA API: https://na-trade.naeu.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+        BDO SEA API: https://trade.sea.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+        BDO MENA API: https://trade.tr.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+        BDO KR API: https://trade.kr.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+        BDO RU API: https://trade.ru.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+        BDO JP API: https://trade.jp.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+        BDO TH API: https://trade.th.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+        BDO TW API: https://trade.tw.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+        BDO SA API: https://blackdesert-tradeweb.playredfox.com/Trademarket/GetWorldMarketWaitList 
+        BDO EU CONSOLE API: https://eu-trade.console.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+        BDO NA CONSOLE API: https://na-trade.console.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+        BDO ASIA CONSOLE API: https://asia-trade.console.playblackdesert.com/Trademarket/GetWorldMarketWaitList 
+    */
     const bdoAPI = 'https://na-trade.naeu.playblackdesert.com/Trademarket/GetWorldMarketWaitList'
     const arshaAPI = 'https://api.arsha.io/v2/na/GetWorldMarketWaitList'
 
