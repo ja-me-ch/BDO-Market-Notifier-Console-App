@@ -87,6 +87,9 @@ const checkArrayForItem = function (items) {
             if (e.id === items[i].id) {
                 if (liveAtTimes.includes(items[i].liveAt)) {
                     console.log(`Notifications for this ${items[i].id} has already been sent`);
+                    if (Date.now() > items[i].liveAt) {
+                        liveAtTimes.splice(i, 1);
+                    }
                 }
                 else {
                     liveAtTimes.push(items[i].liveAt);
@@ -150,6 +153,8 @@ const getWorldMarketWaitList = async function () {
             return error;
         });
 
+
+    
     if (apiUsage === bdoAPI) {
         items = delimitResultMsg(items);
     }
@@ -183,6 +188,7 @@ const main = async function () {
     }
     else console.log('No items currently in waitlist.');
 }
+
 
 main();
 
