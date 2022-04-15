@@ -13,6 +13,7 @@ I am not responsible of any damages or costs incurred when attempting this.
 - [FAQ](#faq)
 - [Getting Started](#getting-started)
 - [Modifications](#modifications)
+  - [Changing Region](#changing-region)
   - [Desired Items](#desired-items)
   - [dotenv](#dotenv)
 - [Setting it Up](#setting-it-up)
@@ -27,8 +28,15 @@ I am not responsible of any damages or costs incurred when attempting this.
 - To install Node.js, you can download the LTS version here: https://nodejs.org/en/
 
 ## Modifications
+### Changing Region
+By default the app uses the BDO NA API, so if you're from NA you can skip this step. For regions other than NA follow instructions below:
+- Open app.js in notepad/notepad++ or any text editor
+- Find the line beginning with ```const bdoAPI```
+- The line by default should look like ```const bdoAPI = 'some API URL here'```
+- Replace the some API URL here with your region, I have listed all the available regions a few lines above in the app.js
+- All done!
 ### Desired Items
-To modifying which items you desire to be notified for, you must add them into the desiredItems array.
+To modify which items you desire to be notified for, you must add them into the desiredItems array.
 - First, you MUST specify the id of the item. Ids for items can be found on various sites like BDOCodex. [For example, The Id for Blackstar Longbow is 715003](https://bdocodex.com/us/item/715003/)
 - Second, you can include a name, typically you'll want it to be the actual name of the item but it doesn't actually matter, its mainly for you to make sense of it. Also the text message will include the name of the item found.
 - Third, the subId is the enhancement level of the item. So on accessories, TET is 4 and PEN is 5. For weapons and armours, PEN is 20. If subId is not included, it will notify you for all versions of the item that is in the market waitlist.
